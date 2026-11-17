@@ -20,9 +20,11 @@ There are no python libraries that helps us see the probability laws of Stochast
 
 Consider a process $\{(X_t, Y_t)\}_{t \in [0,1]}$ and finitely many paths of the process are realized. These paths are random and depending on where the paths end up at time $1$, we get an idea of how it would have evolved over time to end up at this configuration. If most of the paths are drawn towards a specific direction we would see that in the terminal distribution has a change in mean. However, the converse isn't true; no change in mean doesn't imply the paths haven't wandered around in the intermediate time period $(0,1)$. We may start walking, go really far away and end up back at the starting point (we see in Brownian bridge). 
 
-![](images\bm_bridge_law(crop).gif)
+![not-iid](images\bm_bridge_law(crop).gif)
 
-![](images\iid_normal(crop).gif)
+![](images\hero.gif)
+
+![iid](images\iid_normal(crop).gif)
 
 Both Brownian bridge and i.i.d. $(0, \sigma^2)$ have the same starting and terminal distributions but one stays fixed throughout whereas the other wanders around. To distinguish between them we need to see more and more of these snapshots along the temporal direction. So, it is a good idea to "see" how the density evolves over time. That is what the above diagrams highlight.
 
