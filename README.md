@@ -1,6 +1,10 @@
 # radonika
 
-> Python library to make interactive simulations to see path-laws of 2-D stochastic processes. This gives the geometry behind **Radon-Nikodym change-of-measure** for a process, in particular Girsanov's Theorem and **Esscher's Tilt** methods that helps in **Financial modelling**. 
+> Python library to make interactive simulations to see path-laws of 2-D stochastic processes. This gives the geometry behind **Radon-Nikodym change-of-measure** for a process, in particular Girsanov's Theorem and **Esscher's Tilt** methods that helps in **Financial modelling**.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](LICENSE)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-green)](pyproject.toml)
+---
 
 ![](images/hero.gif)
 <!-- <div align="center">
