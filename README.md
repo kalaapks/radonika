@@ -22,8 +22,6 @@ Consider a process $\{(X_t, Y_t)\}_{t \in [0,1]}$ and finitely many paths of the
 
 ![not-iid](images\bm_bridge_law(crop).gif)
 
-![](images\hero.gif)
-
 ![iid](images\iid_normal(crop).gif)
 
 Both Brownian bridge and i.i.d. $(0, \sigma^2)$ have the same starting and terminal distributions but one stays fixed throughout whereas the other wanders around. To distinguish between them we need to see more and more of these snapshots along the temporal direction. So, it is a good idea to "see" how the density evolves over time. That is what the above diagrams highlight.
