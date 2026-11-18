@@ -1,18 +1,19 @@
 # radonika
 
-> Python library to make interactive simulations to see path-laws of 2-D stochastic processes. This gives the geometry behind **Radon-Nikodym change-of-measure** for a process, in particular Girsanov's Theorem and **Esscher's Tilt** methods that helps in **Financial modelling**.
+
+> Python library to make interactive simulations to see path-laws of 2-D stochastic processes. This gives the geometry behind **Radon-Nikodym change-of-measure** for a process, in particular Girsanov's Theorem and **Esscher's Tilt** methods that helps in **Financial modelling**. 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-green)](pyproject.toml)
 ---
 
-![](images/hero.gif)
+![hero1](images/hero.gif)
 <!-- <div align="center">
 
 Evolution of a $2$ dimensional *Gamma Process*
 </div> -->
 
-![](images/reweight_bm.gif)
+![hero2](images/reweight_bm.gif)
 
 ## The idea in one minute
 
@@ -20,9 +21,9 @@ There are no python libraries that helps us see the probability laws of Stochast
 
 Consider a process $\{(X_t, Y_t)\}_{t \in [0,1]}$ and finitely many paths of the process are realized. These paths are random and depending on where the paths end up at time $1$, we get an idea of how it would have evolved over time to end up at this configuration. If most of the paths are drawn towards a specific direction we would see that in the terminal distribution has a change in mean. However, the converse isn't true; no change in mean doesn't imply the paths haven't wandered around in the intermediate time period $(0,1)$. We may start walking, go really far away and end up back at the starting point (we see in Brownian bridge). 
 
-![not-iid](images\bm_bridge_law(crop).gif)
+![im1](images/bm_bridge_law(crop).gif)
 
-![iid](images\iid_normal(crop).gif)
+![im2](images/iid_normal(crop).gif)
 
 Both Brownian bridge and i.i.d. $(0, \sigma^2)$ have the same starting and terminal distributions but one stays fixed throughout whereas the other wanders around. To distinguish between them we need to see more and more of these snapshots along the temporal direction. So, it is a good idea to "see" how the density evolves over time. That is what the above diagrams highlight.
 
@@ -75,7 +76,7 @@ The library has prepared the following families of 2-dimensional processes:
 
 - brownian family consisting of **2-dimensional correlated Brownian motion** with drift and brownian bridge 
 
-## Processes 
+<!-- ## Processes  -->
 All are 2D processes naturally. However, there is an added feature that if a scalar parameter $\theta$ is passed instead of vector valued one such as $(\theta_x, \theta_y)$, it is automatically replicated to become $(\theta, \theta)$. This comes in handy, when we want to map simple processes and we do not really care about making the parameters different in two coordinates. 
 
 
