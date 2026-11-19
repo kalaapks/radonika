@@ -128,15 +128,6 @@ stocks(...).exchange_option()   # Margrabe, numeraire change: closed form vs MC 
 * Axes are frozen over all slices, thetas and measures, so nothing jumps while sliding.
 * `n` is the number of displayed paths; densities come from closed forms or from `n_density` hidden samples.
 
-## What the toggles do (stocks)
-
-* **P / Q / Q1 / Q2**: the density is the exact law under the chosen measure; paths stay the same P-paths and are
-  coloured by their Radon-Nikodym weight rank. Switch "Density from" to *reweighted paths* to build the density from
-  the P-samples weighted by dQ/dP (Girsanov weights, numeraire weights S_T^k/S_0^k). The panel prints E[Z], ESS and
-  E_w[S1]/S1(0): about 1 under Q, drifting under P.
-* **theta slider** (`m.tilt`): Esscher dQ/dP = exp(theta.X_t)/M(theta)^t on a Levy process (log S for stocks).
-  The "snap" button jumps to theta*, the tilt that removes the drift (theta* = (r-mu)/sigma^2 for stocks = Girsanov).
-
 
 ## Things to notice and ponder
 
