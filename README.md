@@ -11,23 +11,22 @@
 ---
 
 <p align="center">
-  <img src="images/hero.gif" alt="hero1" title="" width="650" height="240">
+  <img src="images/hero.gif" alt="hero1">
   <br>
   <b>Gamma jump process pdf evolution over time and the process itself</b>
 </p>
 
 <p align="center">
-  <img src="images/stocks(T3_meas_chng).gif" alt="hero1.5" title="" width="650" height="350">
+  <img src="images/stocks(T3_meas_chng).gif" alt="hero1.5">
   <br>
   <b>Stock prices under measures ℙ, ℚ, ℚ<sub>1</sub> (stock1 as numeraire), ℚ<sub>2</sub> (stock2 as numeraire) does not change the actual paths and only reweights them</b>
 </p>
 
 <p align="center">
-  <img src="images/reweight_bm.gif" alt="hero2" title="" width="650" height="320">
+  <img src="images/reweight_bm.gif" alt="hero2">
   <br>
   <b>Esscher Tilt via Monte Carlo Reweighting (pdf showing finite-sampling roughness).</b>
 </p>
-
 At the end of this file we have added the codes for these plots.
 
 
