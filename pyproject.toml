@@ -1,1 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
 
+[project]
+name = "radonika"
+version = "0.1.0"
+description = "Interactive laws of 2-D stochastic processes and Radon-Nikodym visuals (Dash + Plotly, pure Python)"
+requires-python = ">=3.9"
+dependencies = ["numpy", "scipy", "plotly>=5.18", "dash>=2.14", "matplotlib"]
+
+[project.optional-dependencies]
+notebook = ["ipython"]
+
+[tool.setuptools]
+packages = ["radonika"]
