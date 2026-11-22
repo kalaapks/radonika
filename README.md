@@ -31,24 +31,16 @@
   <b>Esscher Tilt via Monte Carlo Reweighting (pdf showing finite-sampling roughness).</b>
 </p>
 
-At the end of this file we have added the codes for these plots.
-
-
 ## The idea in one minute
 
-There are no python libraries that helps us see the probability laws of Stochastic processes in higher dimensions. There are libraries such as `stochastics` & `aleatory` that helps with these in 1-D. This library does the same in 2-D and much more such as *Esscher's tilt* (which proves to be a very strong tool when *Girsanov* can't be applied) and statistical test related to comparison of two measures. 
+While libraries like `stochastics` and `aleatory` visualize 1-D stochastic processes, **`radonika`** brings probability laws to **2-D**—alongside Radon–Nikodym likelihood ratios, Esscher tilting (which proves to be a very strong tool when *Girsanov* can't be applied), and rare-event importance sampling.
 
-Consider a process $\{(X_t, Y_t)\}_{t \in [0,1]}$ and finitely many paths of the process are realized. These paths are random and depending on where the paths end up at time $t$, we get an approximate shape of the pdf at time $t$. As we move in temporal axis we get the entire family of pdfs $\{p_t(x,y)\}_t$ indexed by time. This is what we see in above figures. 
+Instead of plotting paths alone, `radonika` renders **time-evolving joint PDFs** $\{p_t(x,y)\}_t$ directly alongside sample trajectories. Watching the full density evolution immediately reveals structural differences that static plots miss—for instance, a **Brownian bridge** expanding and collapsing back onto its target versus **i.i.d. $\mathcal{N}(0, \sigma^2)$ noise** maintaining a constant stationary spread:
 
-Having only the terminal distribution is not good enough. We need the entire evolution to get the true picture of the process. Consider Brownian bridge and i.i.d. $(0, \sigma^2)$ for example.
+![Brownian bridge](images/bm_bridge_law(crop).gif)
 
-![not-iid process (Brownian bridge)](images/bm_bridge_law(crop).gif)
+![i.i.d. Normal](images/iid_normal(crop).gif)
 
-![iid process](images/iid_normal(crop).gif)
-
-Both Brownian bridge and i.i.d. $(0, \sigma^2)$ have the same starting and terminal distributions but only one of them is i.i.d.. To distinguish between them we need to see more and more of these snapshots along the temporal direction. So, it is a good idea to "see" how the density evolves over time. That is what the above diagrams highlight.
-
----
 
 ## Install and Tour
 
@@ -146,7 +138,6 @@ m = rd.stocks(mu=0.45, sigma=0.4, r=0.03, seed=1)
 m.plot_law(start=None, time=3, n=600, seed=1)
 ```
 ![toggling between P, Q, Q1, Q2 as base measure](images/stock_chMea.gif)
-
 
 ## License
 
