@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this library for academic work, please cite it."
+title: "radonika"
+authors:
+  - family-names: "Sadhu"
+    given-names: "Kalaap"
+version: "1.1.0"
+date-released: "2026-11-23"
+url: "https://github.com/kalaapks/radonika"
+license: "MIT"

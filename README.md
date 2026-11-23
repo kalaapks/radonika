@@ -48,7 +48,7 @@ Instead of plotting paths alone, `radonika` renders **time-evolving joint PDFs**
 pip install -e .          # from this folder
 ```
 
-Visit [`Demo.ipynb`](Demo.ipynb) for full parameter signatures, mathematical explanations, and gallery examples. To our knowledge, there is no Python package that treats **two-dimensional stochastic processes** as first-class objects and lets you look at their *laws* and at *how those laws change under a change of measure*. `radonika` does that.
+Visit [`Demo.ipynb`](Demo.ipynb) for full parameter signatures and gallery examples with mathematical explanations of what conclusions to draw from them. To our knowledge, there is no Python package that treats **two-dimensional stochastic processes** as first-class objects and lets you look at their *laws* and at *how those laws change under a change of measure*. `radonika` does that.
 
 The library has prepared the following families of 2-dimensional processes:
 
@@ -102,7 +102,14 @@ m.plot_law(start=None, time=None, time_slice=35, n=60, seed=1)
 ```
 ![poisson law](images/poisson_law.gif)
 
-### 3. Using `lrc`
+### 3. Using `lr` (likelihood ratio process)
+```python
+z = rd.lr(rd.poisson(rate=1.0, seed=1), rd.poisson(rate=2.5, seed=1))
+z.plot_law(time_slice=45, n=200)
+```
+![Poisson / Poisson likelihood ratio process](images/Zpo(1)BYpo(2.5).gif)
+
+### 4. Using `lrc`
 
 ```python
 p = rd.gamma_process(a=[2.0, 2.0], b=[1.5, 1.5], seed=3)
@@ -120,7 +127,7 @@ z_clover.lrc(t=1.0)
 ```
 ![2D Heatmap plot of log(Normal/Cauchy)](images/lrc_NormByCau.png)
 
-### 4. Using "closed-form" vs "reweight" in `m.tilt()`
+### 5. Using "closed-form" vs "reweight" in `m.tilt()`
 
 The `closed-form` and `reweight` toggles appear when we code `m.tilt()`, for example, 
 ```python
@@ -132,13 +139,27 @@ m.tilt(time_slice=12, n=70, theta_range=(-2, 2), seed=1)
 
 For processes such as `bm`, when we change the drift along the vector $(1,1)$, it still is a `bm`. So, we have the luxury to recompute the `pdf` nicely for every single `theta` value. This is the "closed-form" and pdfs looks clean in the first gif. In the second one, we use Monte-Carlo sampling for the pdf and it shows up as roughness of the pdf.
 
-### 5. Using Change of Numeraire for `stocks` (`P`, `Q`, `Q1`, `Q2`)
+### 6. Using Change of Numeraire for `stocks` (`P`, `Q`, `Q1`, `Q2`)
 ```python
 m = rd.stocks(mu=0.45, sigma=0.4, r=0.03, seed=1) 
 m.plot_law(start=None, time=3, n=600, seed=1)
 ```
 ![toggling between P, Q, Q1, Q2 as base measure](images/stock_chMea.gif)
 
+
+## Citation
+
+If you use `radonika` for academic work, please cite it:
+
+```bibtex
+@software{radonika,
+  author = {Kalaap Sadhu},
+  title  = {radonika : 2D Stochastic Processes and Radon-Nikodym Visuals},
+  year   = {2026},
+  url    = {https://github.com/kalaapks/radonika}
+}
+```
+
 ## License
 
-MIT
+[MIT](https://github.com/kalaapks/radonika?tab=MIT-1-ov-file)
